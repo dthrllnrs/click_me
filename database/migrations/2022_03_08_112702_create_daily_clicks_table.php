@@ -16,6 +16,7 @@ class CreateDailyClicksTable extends Migration
         Schema::create('daily_clicks', function (Blueprint $table) {
             $table->date('day');
             $table->unsignedInteger('clicks');
+            $table->timestamps();
 
             $table->primary('day');
         });

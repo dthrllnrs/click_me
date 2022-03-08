@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\DailyClickController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,4 +15,9 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('daily-click')->group(function() {
+    Route::post('increment', [DailyClickController::class, 'increment']);
+    Route::get('/', [DailyClickController::class, 'getCountToday']);
 });
