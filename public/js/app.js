@@ -6275,10 +6275,10 @@ module.exports = {
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Poppins);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto);", ""]);
 
 // module
-exports.push([module.i, ".btn {\n  border: 1px solid transparent;\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 0.25rem;\n}\n.btn.lg {\n  padding: 0.5rem 1rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n  border-radius: 0.3rem;\n}\n.btn.primary {\n  background-color: #0243eb;\n  border-color: #0243eb;\n  color: white;\n}\n.btn.primary:active {\n  background-color: #0b6bf2;\n  border-color: #0b6bf2;\n  border-style: outset;\n}\n\n.heading {\n  font-size: 2.5rem;\n  font-weight: 200;\n}\n\n.details {\n  font-weight: 200;\n  font-size: 1rem;\n}\n\n.text-primary {\n  color: #0243eb;\n}\n\n* {\n  font-family: \"Poppins\" !important;\n}\n\nbody {\n  background-color: #e9edf9;\n}\n\n.container {\n  padding-left: 15px;\n  padding-right: 15px;\n}", ""]);
+exports.push([module.i, ".btn {\n  border: 1px solid transparent;\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 0.25rem;\n}\n.btn.lg {\n  padding: 0.5rem 1rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n  border-radius: 0.3rem;\n}\n.btn.primary {\n  background-color: #0243eb;\n  border-color: #0243eb;\n  color: white;\n}\n.btn.primary:active {\n  background-color: #0b6bf2;\n  border-color: #0b6bf2;\n  border-style: outset;\n}\n\n.heading {\n  font-style: normal;\n  font-weight: 300;\n  font-size: 120px;\n  line-height: 112px;\n}\n\n.details {\n  font-style: normal;\n  font-weight: 600;\n  font-size: 24px;\n  line-height: 28px;\n}\n\n.text-primary {\n  color: #0243eb;\n}\n\n* {\n  font-family: \"Roboto\" !important;\n}\n\nbody {\n  background-color: #e9edf9;\n}\n\n.main-container {\n  padding-top: 120px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n.main-container .counter-display {\n  margin-bottom: 15px;\n  text-align: center;\n}\n@media (min-width: 768px) {\n  .main-container {\n    padding-left: 30px;\n    padding-top: 60px;\n    flex-direction: row !important;\n    justify-content: start !important;\n  }\n  .main-container .counter-display {\n    margin-right: 30px !important;\n    text-align: left !important;\n  }\n}", ""]);
 
 // exports
 
@@ -66623,7 +66623,8 @@ var CounterDisplay = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this);
     _this.state = {
-      counter: 0
+      counter: 0,
+      unique_clickers: 0
     };
     return _this;
   }
@@ -66635,8 +66636,10 @@ var CounterDisplay = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "counter-display"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "heading"
-      }, counter));
+        className: "heading text-primary"
+      }, counter), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "details"
+      }, "Clicks today. With ", 0, " unique clickers"));
     }
   }]);
 

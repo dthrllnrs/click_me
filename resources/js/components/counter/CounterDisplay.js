@@ -5,6 +5,7 @@ export default class CounterDisplay extends Component {
         super();
         this.state = {
             counter: 0,
+            unique_clickers: 0,
         }
     }
 
@@ -13,7 +14,9 @@ export default class CounterDisplay extends Component {
 
         return (
             <div className='counter-display'>
-                <span className='heading'>{counter}</span>
+                <span className='heading text-primary'>{counter}</span>
+                <br />
+                <span className='details'>Clicks today. With {0} unique clickers</span>
             </div>
         )
     }

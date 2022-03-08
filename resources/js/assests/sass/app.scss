@@ -4,17 +4,40 @@
 
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+//Responsive breakpoints
+@import 'res-breakpoints';
 
 * {
-    font-family: "Poppins" !important;
+    font-family: "Roboto" !important;
 }
 
 body {
     background-color: $bg;
 }
 
-.container {
-    padding-left: 15px;
-    padding-right: 15px;
+.main-container {
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & .counter-display {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    @include breakpoint(md) {
+        padding-left: 30px;
+        padding-top: 60px;
+        flex-direction: row !important;
+        justify-content: start !important;
+
+        & .counter-display {
+            margin-right: 30px !important;
+            text-align: left !important;
+        }
+    }
 }
