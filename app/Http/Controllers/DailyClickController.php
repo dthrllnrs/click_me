@@ -51,7 +51,10 @@ class DailyClickController extends Controller
             }
 
             DB::commit();
-            return $this->successResponse($title, 'Increment Request Success', []);
+            return $this->successResponse($title, 'Increment Request Success', [
+                'daily_clicks' => $dailyClick,
+                'unique_clickers' => count($dailyClick->uniqueClickers)
+            ]);
         } catch (\Exception $e) {
             DB::rollback();
             return $this->errorResponse($title, $e->getMessage(), []);
@@ -67,8 +70,8 @@ class DailyClickController extends Controller
             $dailyClick = DailyClick::where('day', $today)->first();
 
             return $this->successResponse($title, '', [
-                'daily_click' => $dailyClick,
-                'unique_clickers' => $dailyClick->uniqueClickers
+                'daily_clicks' => $dailyClick,
+                'unique_clickers' => count($dailyClick->uniqueClickers)
             ]);
 
         } catch (\Exception $e) {

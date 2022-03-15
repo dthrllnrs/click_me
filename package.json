@@ -23,5 +23,9 @@
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.8.0",
+        "react-redux": "^7.2.6"
     }
 }

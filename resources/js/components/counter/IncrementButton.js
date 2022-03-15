@@ -1,18 +1,10 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { increment } from '../../stores/slices/counter';
 
-export default class IncrementButton extends Component {
-    constructor() {
-        super();
-        this.state = {
-            counter: 0,
-        }
-    }
-
-    render() {
-        const {counter} = this.state;
-
-        return (
-            <button className='btn primary lg'>Click Me!</button>
-        )
-    }
+export default () => {
+    const dispatch = useDispatch();
+    return (
+        <button className='btn primary lg' onClick={() => dispatch(increment())}>Click Me!</button>
+    )
 }

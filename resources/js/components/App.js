@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom'
 import IncrementButton from './counter/IncrementButton'
 import CounterDisplay from './counter/CounterDisplay'
 import '../assests/sass/app.scss';
+import { Provider } from 'react-redux'
+import store from '../stores/store';
+
 
 class App extends Component {
     render () {
@@ -15,4 +18,8 @@ class App extends Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('app'))
